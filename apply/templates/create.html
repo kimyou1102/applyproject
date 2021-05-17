@@ -15,7 +15,8 @@
     {% block content %}
     <h1>지원서 작성하기</h1>
     <br><br>
-    <form action="{% url 'create_apply' %}">
+    <form action="" method="POST">
+        {% csrf_token %}
         <p>이름</p>
         <input type="text" name="name" class="size" 
         placeholder="    지원자 분의 이름을 입력해주세요">

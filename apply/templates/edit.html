@@ -15,7 +15,8 @@
     {% block content %}
     <h1>지원서 수정</h1>
     <br><br>
-    <form action="{% url 'update' apply.id %}">
+    <form action="{% url 'update' apply.id %}" method="POST">
+        {% csrf_token %}
         <p>이름</p>
         <input type="text" name="name" class="size" 
         value="{{apply.name}}">

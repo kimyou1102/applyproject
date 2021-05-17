@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y+f86x+$g7ep1)1-!5bqmahtd!$e%8h8r%4b!gl4qu7=$bm5kg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
@@ -71,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Application.wsgi.application'
 
-import dj_database_url
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -85,8 +85,8 @@ import dj_database_url
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'daq4jk3nrhqtn9',
         'USER': 'ieygfckvlhbyuo',
         'PASSWORD': 'cfc9181645bb368aff0b9fd23326885eff4ddc6e3fcfbe1614f385790f12308f',
         'HOST':'ec2-54-90-211-192.compute-1.amazonaws.com',
