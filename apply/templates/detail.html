@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content1 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/detail_style.css' %}">
+</head>
+<body>
+    <header>
+        {% endblock %}
+        {% block content %}
+    </header>
+    <main>
+        <div class="block_container">
+            <h1>지원자 정보</h1>
+            <br>
+        	<p>이름: {{apply_detail.name}}</p>
+        	<p>나이: {{apply_detail.age}}</p>
+        	<p>성별: {{apply_detail.gender}}</p>
+            <p>지원자 한마디:<br><br>
+            {{apply_detail.say}}</p>
+        	<br><br>
+        	<p>{{apply_detail.pub_date}}</p>
+        </div>
+        <br>
+        <form action="{% url 'edit' apply_detail.id %}">
+            <div class="center">
+                <button value="수정" class="button">수정</button>
+            </div>
+        </form>
+        <br>
+        <form action="{% url 'delete' apply_detail.id %}">
+            <div class="center">
+                <button value="삭제" class="button">삭제</button>
+            </div>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>
+{% endblock %}
+
+

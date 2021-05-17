@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content1 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/home_style.css' %}">
+</head>
+<body>
+    <div class="photo">
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1063&q=80" alt="회사사진">
+    </div>
+    <br>
+    <div class="content">
+        <h1>가슴 뛰는 목표,<br>목적이 있는 삶</h1>
+        <p class="letter">
+            우리는 ‘금융의 모든 문제를 해결하겠다’는 목표에 마음이 움직여 여기에 모였습니다. 토스팀은 모두가<br>
+            같은 목표를 향해 달립니다. 불가능한 것을 꿈꾸고, 그걸 가능하게 만드는 동료들과 함께 열정적으로<br>
+            일하고 있습니다. 가슴이 설레시나요? 지금이 바로 토스팀에 합류할 때입니다.
+        </p>
+        <p class="blue">토스팀의 비전과 목표</p>
+    </div>
+    <br><br><br><br><br>
+    <form action="{% url 'create' %}">
+        <div class="center">
+            <button value="제출하기" class="button">지원하기</button>
+        </div>
+    </form>
+    <br><br><br>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% block content1 %}
+{% endblock %}
+        <header>
+            <div class="container">
+                <a href="{% url 'home' %}">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAlspqN6AFuv0zoR3MWsIzPHzZz5WD8XfxguhI-NG_zfWweNu7Uy00P3YlbyUDLW7k7A&usqp=CAU" alt="로고">
+                </a>
+            <nav>
+                <ul class="menu">
+                    <a href="{% url 'read' %}"><li>지원서 보기</li></a>
+                    <a href="{% url 'create' %}"><li>지원하기</li></a>
+                    <a href="#"><li>비전</li></a>
+                    <a href="#"><li>채용 공고</li></a>
+                </ul>
+            </nav>
+            </div>
+        </header>
+            {% block content %}
+            {% endblock %}

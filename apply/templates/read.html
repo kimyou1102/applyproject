@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content1 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="{% static 'css/read_style.css' %}">
+</head>
+<body>
+    <h1>지원서 열람</h1>
+    <br><br><br>
+    {% endblock %}
+    {% block content %}
+
+    {% for apply in applys.all %}
+        <h2><a href="{% url 'detail' apply.id %}">{{apply.name}}</a></h2>
+        <br><br><br>
+    {% endfor %}
+    <br>
+    <br><br><br>
+</body>
+</html>
+{% endblock %}
