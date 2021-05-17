@@ -71,17 +71,30 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Application.wsgi.application'
 
-
+import dj_database_url
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'USER': 'ieygfckvlhbyuo',
+        'PASSWORD': 'cfc9181645bb368aff0b9fd23326885eff4ddc6e3fcfbe1614f385790f12308f',
+        'HOST':'ec2-54-90-211-192.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
-
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
