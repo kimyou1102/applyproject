@@ -39,7 +39,8 @@ a:visited {
     color: black;
 }
 
-.container{
+/* 실수로 잘못했던 첫버전!!!@@@@@
+    .container{
     position: fixed;
     top:0;
     left:0;
@@ -54,7 +55,29 @@ a:visited {
     font-size: 15px;
     border-bottom: 1px solid rgb(192, 192, 192);
     background-color: white;
+} */
+
+header {
+    position: fixed;
+    top:0;
+    left:0;
+    right:0;
+    height: 65px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
 }
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(192, 192, 192);
+    margin: 0 auto;
+    width: 69%;
+} 
+
 
 a img {
     width: 200px;
@@ -75,7 +98,7 @@ a img {
     transition-timing-function: ease-out;
 }
 
-button:hover {
+.button:hover {
     background-color: rgb(48, 48, 255);
     border: solid 2px rgb(48, 48, 255);
 }

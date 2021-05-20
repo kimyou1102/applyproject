@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="{% static 'css/read_style.css' %}">
+    <script type="text/javascript" src="{% static 'js/js.js' %}"></script>
 </head>
 <body>
     <h1>지원서 열람</h1>
@@ -17,8 +18,25 @@
     {% block content %}
 
     {% for apply in applys.all %}
-        <h2><a href="{% url 'detail' apply.id %}">{{apply.name}}</a></h2>
-        <br><br><br>
+    <div class="box">
+        <a href="{% url 'detail' apply.id %}"><img class="human_photo" src="{{ apply.image.url }}" alt=""></a>
+        <!-- .image앞에 변수를 다르게 했으니 그에 맞게 하는걸 유의! -->
+        <p>이름: {{apply.name}}</h2>
+        <p>나이: {{apply.age}}</p>
+        <p>성별: {{apply.gender}}</p>
+        <p class="text">지원자 한마디: {{apply.say}}</p>
+        <p>작성시간: {{apply.pub_date}}</p>
+        <form action="{% url 'edit' apply.id %}" class="update_b">
+            <div class="update_b">
+                <button value="수정">수정</button>
+            </div>
+        </form>
+        <form action="{% url 'delete' apply.id %}" class="delete_b">
+            <div class="delete_b">
+                <button value="삭제">삭제</button>
+            </div>
+        </form>
+    </div>
     {% endfor %}
     <br>
     <br><br><br>

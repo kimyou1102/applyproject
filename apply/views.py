@@ -13,7 +13,7 @@ def detail(request, apply_id):
 
 def create(request):
     if request.method == 'POST':
-        form = CreateApplyForm(request.POST)
+        form = CreateApplyForm(request.POST, request.FILES)
         if form.is_valid():
             apply = form.save(commit=False)
             apply.pub_date = timezone.datetime.now()
@@ -34,7 +34,7 @@ def edit(request, apply_id):
 def update(request, apply_id):
     apply = Apply.objects.get(id = apply_id)
     if request.method == "POST":
-        form = CreateApplyForm(request.POST, instance = apply)
+        form = CreateApplyForm(request.POST, request.FILES,instance = apply)
         if form.is_valid():
             apply = form.save()
             return redirect('/detail/'+str(apply.id))
@@ -47,3 +47,4 @@ def delete(reqeust, apply_id):
     delete_apply = Apply.objects.get(id = apply_id)
     delete_apply.delete()
     return redirect('read')
+
