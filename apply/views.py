@@ -18,7 +18,7 @@ def create(request):
             apply = form.save(commit=False)
             apply.pub_date = timezone.datetime.now()
             apply.save()
-        return redirect('/detail/'+str(apply.id))
+        return redirect('/apply/detail/'+str(apply.id))
     else:
         form = CreateApplyForm()
     return render(request, 'create.html', {'form':form})
@@ -37,7 +37,7 @@ def update(request, apply_id):
         form = CreateApplyForm(request.POST, request.FILES,instance = apply)
         if form.is_valid():
             apply = form.save()
-            return redirect('/detail/'+str(apply.id))
+            return redirect('/apply/detail/'+str(apply.id))
     else:
         form = CreateApplyForm(instance=apply)
         return render(request, 'create.html', {'form':form})

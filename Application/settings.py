@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
 
+AUTH_USER_MODEL = 'account.CustomUser'
 
 # Application definition
 
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apply.apps.ApplyConfig',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
